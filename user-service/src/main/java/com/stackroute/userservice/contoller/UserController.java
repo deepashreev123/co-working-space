@@ -52,27 +52,9 @@ public class UserController {
     }
 
 
-//    @DeleteMapping("user/{emailId}")
-//    public ResponseEntity<?> deleteUser(@PathVariable("emailId") String emailId) throws UserNotFoundException
-//    {
-//        ResponseEntity responseEntity;
-//        try {
-//            userService.deleteUser(emailId);
-//
-//
-//            responseEntity = new ResponseEntity<String>("Deleted successfully", HttpStatus.OK);
-//        }
-//        catch(UserNotFoundException exception){
-//
-//            responseEntity=new ResponseEntity<String>(exception.getMessage(),HttpStatus.CONFLICT);
-//        }
-//        return responseEntity;
-//    }
-
 
 
     @DeleteMapping("user")
-   // @RequestMapping(value = "user", method= RequestMethod.DELETE)
     public ResponseEntity<String> deleteUser(@RequestBody User user)
     {
         ResponseEntity responseEntity;

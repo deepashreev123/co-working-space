@@ -9,4 +9,5 @@ public interface UserRepository extends MongoRepository<User,String> {
 
      void deleteByEmailId(String emailId);
     boolean existsByEmailId(String emailId);
+
 }

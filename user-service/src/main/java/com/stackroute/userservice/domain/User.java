@@ -27,8 +27,11 @@ public class User {
 
     private int uid;
 
+
+
     @Transient
     private String password;
 
+    private String address;
 
 }
