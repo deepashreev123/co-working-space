@@ -33,6 +33,23 @@ services:
       expose:
       - 8888
 
-  userservice:
-    build: user-service/
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo
     network_mode: host
+
+
+  user-service:
+    image: user-service
+    build: user-service/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+      - eurekaserver
+      - configserver
+      - apigateway
